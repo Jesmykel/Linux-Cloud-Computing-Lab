@@ -1,6 +1,9 @@
 # Lab 1: Create a Linux virtual machine with the Azure CLI
 
 1. Launch Azure Cloud Shell
+
+I lauched Azure cloud Shell on the Azure Platfrom and i was presented with the CLI interface
+
 2. Create a resource group
 3. Create virtual machine
 4. Open port 80 for web traffic
