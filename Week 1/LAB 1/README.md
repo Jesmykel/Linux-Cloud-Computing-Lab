@@ -41,6 +41,8 @@ sudo apt-get -y install apache2
 
 I viewed the web server in action and i got the below image displayed
 
+![Screenshot (5)](https://user-images.githubusercontent.com/103521655/167899034-9e780478-ef24-4e7b-b749-c148c57b20b1.png)
+
 
 
 
