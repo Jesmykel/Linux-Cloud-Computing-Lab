@@ -35,6 +35,7 @@ ssh azureuser@20.211.186.215
 I installed a web server with the input
 
 sudo apt-get -y update
+
 sudo apt-get -y install apache2
 
 7. View the web server in action
