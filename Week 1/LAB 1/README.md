@@ -16,7 +16,7 @@ I created a virtual machine with the input
 
 az vm create --resource-group JesmykelRG --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys 
 
-I got an output with a public IP address:20.211.186.215 and a private IP address:10.0.0.4
+I got an output with a public IP address: 20.211.186.215 and a private IP address: 10.0.0.4
 
 4. Open port 80 for web traffic
 
