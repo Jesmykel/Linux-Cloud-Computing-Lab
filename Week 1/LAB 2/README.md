@@ -2,25 +2,25 @@
 
 Task: 
 
-1. Create resource group
+1. CREATE RESOURCE GROUP
 
 I created a resource group with the input
 
 az group create --name JesmykelRG1 --location Australiaeast
  
-2. Create virtual machine
+2. CREATE VIRTUAL MACHINE
 
 I created a virtual machine with the input 
 
 az vm create --resource-group JesmykelRG1 --admin-username azureuser --image UbuntuLTS --name myVM --generate-ssh-keys
 
-3. Connect to VM
+3. CONNECT TO VM
 
 I connected to a virtual machine using the code input
 
 ssh azureuser@20.248.189.187
 
-4. Understand VM images
+4. UNDERSTAND VM IMAGES
 
  To view VM images i used the code input
 
@@ -44,7 +44,7 @@ WindowsServer                 MicrosoftWindowsServer  2012-R2-Datacenter  Micros
 WindowsServer                 MicrosoftWindowsServer  2012-Datacenter     MicrosoftWindowsServer:WindowsServer:2012-Datacenter:latest     Win2012Datacenter    latest
 WindowsServer                 MicrosoftWindowsServer  2008-R2-SP1         MicrosoftWindowsServer:WindowsServer:2008-R2-SP1:latest         Win2008R2SP1         latest
 
-5. Understand VM sizes
+5. UNDERSTAND VM SIZES
 
 To view VM sizes i used the code input
 
@@ -77,7 +77,7 @@ MaxDataDiskCount    MemoryInMb    Name                    NumberOfCores    OsDis
 32                  196608        Standard_D48d_v4        48               1047552           1843200
 
 
-6. VM power states
+6. VM POWER STATES
 
 To check VM power state I inputed the code input
 
@@ -90,7 +90,7 @@ Code                Level    DisplayStatus
 PowerState/running  Info     VM running
 
 
-7. Management tasks
+7. MANAGEMENT TASKS
 
 Several management tasks can be carried out in a vm which include
 > Obtaining IP address
@@ -126,6 +126,8 @@ az vm start --resource-group JesmykelRG1 --name myVM
 I them deleted my VM using the input code
 
 az group delete --name JesmykelRG1 --no-wait --yes
+
+
 
 Notes:
 Quickstart: Create a Linux VM
