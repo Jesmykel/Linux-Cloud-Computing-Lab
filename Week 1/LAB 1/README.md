@@ -42,7 +42,7 @@ sudo apt-get -y install apache2
 
 I viewed the web server in action and i got the below image displayed
 
-![Screenshot (5)](IMAGE/apache2.png)
+![web server](IMAGE/apache2.png)
 
 
 
