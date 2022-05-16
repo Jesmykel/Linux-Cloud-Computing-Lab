@@ -76,7 +76,7 @@ I then opened the /etc/fstab file in a text editor using the code input
 
 sudo nano /etc/fstab
 
-Of i added the line of code below 
+I added the line of code below 
 
 UUID=b70183ff-8455-43a4-88c4-d19302d791ed   /datadrive  xfs    defaults,nofail   1  2
 
