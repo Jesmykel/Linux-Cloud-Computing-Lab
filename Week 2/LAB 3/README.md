@@ -31,13 +31,13 @@ sudo systemctl start httpd
 
 To investigate the service status i used the code input
 
-sudo systemctl status
+systemctl status httpd.service
 
 5. STOP THE SERVICE
 
 To stop service i used the code input
 
-sudo systemctl stop
+systemctl stop httpd.service
 
 
 Challenge: Create a boostrapping script that will install and start this service on new EC2 VMs
