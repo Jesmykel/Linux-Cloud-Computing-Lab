@@ -11,6 +11,7 @@ aws ec2 run-instances
 --instance-type t2.micro 
 --key-name Jesmykel 
 --security-group-ids sg-0c76c8a2d3cd4ad3d
+--subnet-id subnet-06813ed0fa4467465
 
 
 2. INSTALL THE APACHE WEB SERVER
