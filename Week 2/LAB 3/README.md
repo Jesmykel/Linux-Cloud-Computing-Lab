@@ -41,7 +41,7 @@ sudo systemctl stop
 
 Challenge: Create a boostrapping script that will install and start this service on new EC2 VMs
 
-I created a boostrapping in the maangement console under the  using the code input
+I created a boostrapping in the maangement console under the "Advance setting; users data" using the code input
 sudo yum update -y
 sudo yum install httpd -y
 sudo systemctl start httpd 
