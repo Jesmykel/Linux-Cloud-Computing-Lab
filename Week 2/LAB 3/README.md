@@ -1,14 +1,50 @@
 # Lab 3: Manage Packages and Services on a Linux VM (Azure or AWS)
 
 
-1. Create a Linux VM
-2. Install the Apache Web Server
-3. Start the service status via command line
-4. Investigate the service status via command line
-5. Stop the service
+1. CREATE A LINUX VM
+
+To create a linux VM, i used an exiting keypair, vpc, a linux AMI and security group and i used the input code
+
+aws ec2 run-instances 
+--image-id ami-0022f774911c1d690 
+--count 1 
+--instance-type t2.micro 
+--key-name Jesmykel 
+--security-group-ids sg-0c76c8a2d3cd4ad3d
+
+
+2. INSTALL THE APACHE WEB SERVER
+
+To install an Apache web server, I went ahead the launch the instance from the management console using the EC2 instance connect of which i then use the input code
+
+sudo yum update -y
+sudo yum install httpd -y
+
+3. START THE SERVICE STATUS VIA COMMAND LINE
+
+To start the service i used the input code 
+
+sudo systemctl start httpd
+
+4. INVESTIGATE THE SERVICE STATUS VIA COMMAND LINE
+
+To investigate the service status i used the code input
+
+sudo systemctl status
+
+5. STOP THE SERVICE
+
+To stop service i used the code input
+
+sudo systemctl stop
 
 
 Challenge: Create a boostrapping script that will install and start this service on new EC2 VMs
+
+I created a boostrapping in the maangement console under the  using the code input
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd 
 
 Notes:
 
