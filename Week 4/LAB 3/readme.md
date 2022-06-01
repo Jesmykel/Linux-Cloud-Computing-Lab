@@ -63,6 +63,17 @@ http://34.216.145.112/phpMyAdmin/
 
 Below are the screenshot of the admin pages displayed
 
+For Apache webserver
+![Screenshot](Images/Apache.png)
+
+For php hompage
+
+![Screenshot](Images/PHP.png)
+
+For phpmyadmin
+
+![Screenshot](Images/myphpadmin.png)
+
 
 
 
