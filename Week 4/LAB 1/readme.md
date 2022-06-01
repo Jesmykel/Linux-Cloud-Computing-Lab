@@ -14,7 +14,7 @@ aws ec2 create-vpc --cidr-block 10.0.0.0/16
 
 Was answered together with task 1.
 
-![](Images/Task%201%242.png)
+![cli output](Images/Task%201%242.png)
 
 3.  Two subnets (one private with 10.0.1.0/24 and one public  10.0.0.0/24)
 
@@ -23,10 +23,15 @@ To create a subnet i used the code input
 aws ec2 create-subnet 
 --vpc-id vpc-0b14b79b595a6ddff 
 --cidr-block 10.0.1.0/24
+
+![cli output](Images/Task%203a.png)
+
 and 
 aws ec2 create-subnet 
 --vpc-id vpc-0b14b79b595a6ddff 
 --cidr-block 10.0.0.0/24
+
+![cli output](Images/Task%203b.png)
 
 4.   Attach an internet gateway
 
@@ -34,11 +39,15 @@ To attach gateway i firstly created an internet gateway using the code input
 
 aws ec2 create-internet-gateway
 
+![cli output](Images/Task%204i.png)
+
 I then used the code input below to attach the gateway
 
 aws ec2 attach-internet-gateway 
 --vpc-id vpc-0b14b79b595a6ddff 
 --internet-gateway-id igw-067b9005311066fd9
+
+![cli output](Images/Task%204ii.png)
 
 To make the subnet 10.0.0.0/24 a public subnet i attached it to the internet gatway by creating a route table using the code input
 
@@ -54,11 +63,15 @@ aws ec2 create-route
 I then assigned the subnet to the route i created in the route table using the code input
 aws ec2 describe-subnets --filters "Name=vpc-id,Values=vpc-0b14b79b595a6ddff"
 
+![cli output](Images/Task%204iii.png)
+
 After getting the subnet id i then associated with the custom route table using the code input 
 
 aws ec2 associate-route-table  
 --subnet-id subnet-0f33fc0a959ad0093 
 --route-table-id rtb-04db633f665aeee2e
+
+![cli output](Images/Task%204iv.png)
 
 Thereby making it a public subnet.
 Grading tip:  Screenshot each step and upload with your step by step answer
