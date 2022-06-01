@@ -4,7 +4,7 @@ Tasks:
 
 1. Prepare the LAMP server
 
-sudo yum install -y 
+sudo yum update -y 
 
 sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
 
@@ -60,6 +60,10 @@ rm phpMyAdmin-latest-all-languages.tar.gz
 sudo systemctl start mariadb
 
 http://34.216.145.112/phpMyAdmin/
+
+Below are the screenshot of the admin pages displayed
+
+
 
 
 Guide: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
