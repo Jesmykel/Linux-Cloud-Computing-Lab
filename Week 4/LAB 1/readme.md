@@ -13,6 +13,8 @@ aws ec2 create-vpc --cidr-block 10.0.0.0/16
 
 Was answered together with task 1.
 
+![cli output](Images/Task 1$2.png)
+
 3.  Two subnets (one private with 10.0.1.0/24 and one public  10.0.0.0/24)
 
 To create a subnet i used the code input
