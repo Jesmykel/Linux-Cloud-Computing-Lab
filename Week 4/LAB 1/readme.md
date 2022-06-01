@@ -5,6 +5,7 @@
 Create a VPC with the following property using the CLI:
 
 1.  Name: LabVPC
+
 To create a vpc i used the code input 
 
 aws ec2 create-vpc --cidr-block 10.0.0.0/16
