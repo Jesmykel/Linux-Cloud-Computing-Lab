@@ -4,11 +4,17 @@ Tasks:
 
 1. Prepare the LAMP server
 
-sudo yum update -y 
+sudo yum update -y
+
+![cli output](Images/update.png)
 
 sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
 
+![cli output](Images/amazon-linux-extras.png)
+
 sudo yum install -y httpd mariadb-server
+
+![cli output](Images/install%20https%20%24%20mariadb.png)
 
 sudo systemctl start httpd
 
@@ -16,11 +22,17 @@ sudo systemctl enable httpd
 
 sudo systemctl is-enabled httpd
 
+![cli output](Images/httpd.png)
+
 sudo usermod -a -G apache ec2-user
 
 exit
 
+![cli output](Images/usermod.png)
+
 groups
+
+![cli output](Images/groups.png)
 
 sudo chown -R ec2-user:apache /var/www
 
@@ -37,6 +49,8 @@ http://34.216.145.112/phpinfo.php
 3. Secure the database server
 
 sudo systemctl start mariadb
+
+![cli output](Images/mariadb.png)
 
 sudo mysql_secure_installation
 
