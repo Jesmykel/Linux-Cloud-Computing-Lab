@@ -50,86 +50,60 @@ gcloud projects --help
 gcloud projects create --help
 ```
 
-```bash
-# Create a new project and set as default.
-gcloud projects create <project_id> --name=<project_name> --set-as-default
+Below are the expected processes i went through on the gcp cli plaform;
+
+I used the gcp platform to create an instance using the code input
+gcloud projects create jesmykel --name=JesmykelGCP --set-as-default
 ```
 
-```bash
-# List the available billing accounts.
+I the code input below to list the billing account available 
 gcloud beta billing accounts list
 ```
 
-```bash
-# Link a billing account with the project.
-gcloud beta billing projects link <project_id> --billing-account=<account_id>
+I linked the billing account with the code input
+gcloud beta billing projects link jesmykel --billing-account=001KR5-7TYD37-7HDEC5
 ```
 
-```bash
-# List the available services, filter on the name 'compute', and echo the result. 
+I used the code input below to echo service 
 SERVICE=$(gcloud services list --available --filter="NAME ~ ^compute" --format="value(NAME)")
 echo $SERVICE
 ```
 
-```bash
-# Enable the Compute Engine API.
+I used the code input below to enable service
 gcloud services enable $SERVICE
 ```
 
-```bash
-# Set the preferred Compute Engine region.
-gcloud config set compute/region <region>
+I used the code input to set region
+gcloud config set compute/region europe-east1
 ```
 
-```bash
-# Set the preferred Compute Engine zone.
-gcloud config set compute/zone <zone>
+I used the code input to set zone
+gcloud config set compute/zone europe east1 b
 ```
 
-```bash
-# List the current configuration.
-gcloud config list
-```
-
-```bash
-# List the current networks.
-gcloud compute networks list
-```
-
-```bash
-# List the current firewall rules.
-gcloud compute firewall-rules list
-```
-
-```bash
-# Delete the firewall rules.
+I used the code input to create a firewall rule
 gcloud compute firewall-rules delete default-allow-icmp default-allow-internal default-allow-rdp default-allow-ssh
 ```
 
-```bash
-# Delete the default network.
+I used the code input to delete the default network
 gcloud compute networks delete default
 ```
 
-```bash
-# Create a custom mode network.
+I used the code input to create to create a custom mode network
 gcloud compute networks create vpc-network --subnet-mode=custom
 ```
 
-```bash
-# Create a default subnet.
+I used the code input to create a subnet
 gcloud compute networks subnets create default --network=vpc-network --range=10.0.1.0/24
 ```
 
-```bash
-# Add the external IP from the Cloud Shell session to a variable, add the CIDR notation, and echo the result.
+I used the code input to add the external IP from the Cloud Shell session to variable, add CIDR notation, and echo result.
 SHELL_EXTERNAL_IP=$(curl ifconfig.co)
 SHELL_EXTERNAL_IP="$SHELL_EXTERNAL_IP""/32"
 echo $SHELL_EXTERNAL_IP
 ```
 
-```bash
-# Create a firewall rule for SSH traffic.
+I used the code input to create a firewall rule for SSH traffic.
 gcloud compute firewall-rules create allow-ssh-ingress \
   --network=vpc-network \
   --priority=1000 \
@@ -140,8 +114,7 @@ gcloud compute firewall-rules create allow-ssh-ingress \
   --rules=tcp:22
 ```
 
-```bash
-# Create a firewall rule for web traffic.
+I used the code input to create a firewall rule for web traffic.
 gcloud compute firewall-rules create allow-web-ingress \
   --network=vpc-network\
   --priority=1000 \
@@ -152,19 +125,16 @@ gcloud compute firewall-rules create allow-web-ingress \
   --rules=tcp:80,tcp:443 
 ```
 
-```bash
-# Create a service account.
+I used the code input to create a service account.
 gcloud iam service-accounts create web-instance-01 --display-name=web-instance-01
 ```
 
-```bash
-# Add the email address of the service account to a variable and echo the result.
+I used the code input to add the email address of the service account to a variable and echo the result.
 SERVICE_ACCOUNT=$(gcloud iam service-accounts list --filter="email ~ ^web-instance-01" --format="value(email)")
 echo $SERVICE_ACCOUNT
 ```
 
-```bash
-# Create the instance, including a startup script.
+I used the code input to create the instance, including a startup script.
 gcloud compute instances create web-instance-01 \
   --machine-type=e2-micro \
   --description="Web server" \
@@ -176,40 +146,33 @@ gcloud compute instances create web-instance-01 \
   --tags=ssh,web \
 ```
 
-```bash
-# Connect to the instance over SSH.
+I used the code input to connect to the instance over SSH.
 gcloud beta compute ssh web-instance-01
 ```
 
-```bash
-# Verify that the Apache HTTP Server service is active (running).
+I the verified that the Apache HTTP Server service is active (running) using the code input
 systemctl status apache2.service
 ```
 
-```bash
-# Verify the custom index.html file.
+I then verified the custom index.html file using the code input
 cat /var/www/html/index.html
 ```
 
-```bash
-# Close the SSH connection.
+I then exited the SSH connection.
 exit
 ```
 
-```bash
-# Add the external IP from the instance to a variable, add the HTTP protocol, and echo the result.
+I then added the external IP from the instance to a variable, add the HTTP protocol, and echo the result.
 HTTP_ADDRESS=$(gcloud compute instances describe web-instance-01 --format="value(networkInterfaces[0].accessConfigs[0].natIP)")
 HTTP_ADDRESS="http://""$HTTP_ADDRESS"
 echo $HTTP_ADDRESS
 ```
 
-```bash
-# Verify if the instance is reachable
+I Verified if the instance is reachable
 curl $HTTP_ADDRESS
 ```
 
-```bash
-# Stop the instance.
+I then finally stopped the instance
 gcloud compute instances stop web-instance-01
 ```
 
