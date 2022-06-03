@@ -5,7 +5,7 @@ Task:
 1. Download word press installation package.
 Input this line of wget command in your shell to install wordpress 
 With the below code line i downloaded the wordpress zipped package
-
+ 
 wget https://wordpress.org/latest.tar.gz
 
 I unzipped it with the code line below
@@ -20,9 +20,13 @@ I started the databaseserver with the input code
 
 sudo systemctl start mariadb
 
+![cli output](Images/create%20database.png)
+
 I logged into database as root user 
 
 mysql -u root -p
+
+![cli output](Images/database%20creation.png)
 
 I created a user and password for the the MySQL database with the code input
 
@@ -48,6 +52,8 @@ exit
 
 To create and edit a wp-config.php file;
 
+![cli output](Images/wp-config.png)
+
 I copied the wp-config-sample.php file to a file called wp-config.php using the cod input
 
 cp wordpress/wp-config-sample.php wordpress/wp-config.php
@@ -57,6 +63,8 @@ I edited the wp-config.php using the code input
 nano wordpress/wp-config.php
 
 After which a wordpress config was displayed and i edited the necessary lines
+
+![cli output](Images/database%20renaming.png)
 
 4. Install your WordPress files under the Apache document root)
 
@@ -73,7 +81,6 @@ sudo vim /etc/httpd/conf/httpd.conf
 After which i then edited the "AllowOverride None to AllowOverride All"
 
 I saved and the exited the text editor
-
 
 5. Install the PHP graphics drawing library on Amazon Linux 2.
 
@@ -113,19 +120,24 @@ I then verified that the database server is running  with the code input
 
 of which it was running
 
+![cli output](Images/mariadb%20status.png)
+
 I also verified that the Apache web server is running using the code input
 
 sudo systemctl status httpd
 
 of which it was running
 
+![cli output](Images/httpd%20status.png)
 
 I then type the public DNS address to view thw wordpress installation script of which also diaplayed.
-
 
 7. Perform clean up operations.
 
 I cleared the all operation and exited the insatnce.
+
+![cli output](Images/wordpress%20homepage.png)
+![cli output](Images/wordpress%20homepage%202.png)
 
 
 
